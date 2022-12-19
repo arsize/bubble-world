@@ -1,5 +1,36 @@
-.container{
-    width: 100%;
-    height: 50px;
-    border-bottom: 1px solid #f1f1f1;
+.container {
+  width: 100%;
+  height: 56px;
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  .widthLimit {
+    min-width: 768px;
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 100%;
+    .logo {
+      font-size: 26px;
+      float: left;
+      height: 56px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+    .centerBar {
+      display: flex;
+      height: 100%;
+    }
+    .btnBox {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      float: right;
+      font-size: 24px;
+      color: #969696;
+    }
+  }
 }
