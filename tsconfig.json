@@ -7,11 +7,19 @@
   "compilerOptions": {
     "baseUrl": ".",
     "jsx": "preserve",
+    "noImplicitAny": true,
     "lib": [
       "dom",
       "esnext"
     ],
-    "types": [],
+    "types": [
+      "node"
+    ],
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ],
     "paths": {
       "@/*": [
         "src/*"

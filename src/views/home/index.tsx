@@ -1,14 +1,15 @@
 import { defineComponent } from 'vue'
 import { NButton, NRadio } from 'naive-ui'
+import Header from '@/layout/Header'
+import RecentlyUpdate from './parts/RecentlyUpdate'
 
 export default defineComponent({
-  name: 'home',
+  name: 'Home',
   setup(props, ctx) {
     return () => (
       <>
-        <div>hello2</div>
-        <NButton type="default">moren </NButton>
-        <NRadio checked>Now</NRadio>
+        <Header />
+        <RecentlyUpdate />
       </>
     )
   },
