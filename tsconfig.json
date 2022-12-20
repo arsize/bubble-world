@@ -1,31 +1,38 @@
 {
-  "include": [
-    "env.d.ts",
-    "src/**/*",
-    "src/**/*.vue",
-  ],
   "compilerOptions": {
     "baseUrl": ".",
-    "jsx": "preserve",
-    "noImplicitAny": true,
+    "target": "ESNext",
+    "useDefineForClassFields": true,
     "lib": [
-      "dom",
-      "esnext"
-    ],
-    "types": [
-      "node"
-    ],
-    "plugins": [
-      {
-        "name": "typescript-plugin-css-modules"
-      }
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
     ],
     "paths": {
       "@/*": [
         "src/*"
-      ]
-    }
+      ],
+    },
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "noEmit": true,
+    "types": [
+      "node"
+    ],
+    "jsx": "react-jsx"
   },
+  "include": [
+    "src"
+  ],
   "references": [
     {
       "path": "./tsconfig.node.json"

@@ -1,8 +1,5 @@
-import { defineComponent } from 'vue'
+function Footer() {
+  return <>footer</>
+}
 
-export default defineComponent({
-  name: 'Footer',
-  setup(props, ctx) {
-    return () => <></>
-  },
-})
+export default Footer

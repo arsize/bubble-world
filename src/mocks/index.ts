@@ -1,4 +1,14 @@
-const Mock = require('mockjs')
+var Mock = require('mockjs')
 
-// 格式： Mock.mock( url, 'post'|'get' , 返回的数据)
-Mock.mock('/api/test', 'get', require('./data/test.json'))
+const data = Mock.mock({
+  'list|20-60': [
+    {
+      id: '@increment(1)',
+      title: '@ctitle',
+      content: '@cparagraph',
+      add_time: '@date(yyyy-MM-dd hh:mm:ss)',
+    },
+  ],
+})
+
+export default data

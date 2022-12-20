@@ -1,9 +1,11 @@
-import axios, { AxiosInstance } from 'axios'
+import axios from 'axios'
 
-const HTTP: AxiosInstance = axios.create({
+const instance = axios.create({
   baseURL: 'https://some-domain.com/api/',
   timeout: 1000,
   headers: { 'X-Custom-Header': 'foobar' },
 })
+
+const HTTP = () => {}
 
 export default HTTP

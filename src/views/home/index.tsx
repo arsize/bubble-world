@@ -1,16 +1,8 @@
-import { defineComponent } from 'vue'
-import { NButton, NRadio } from 'naive-ui'
-import Header from '@/layout/Header'
-import RecentlyUpdate from './parts/RecentlyUpdate'
+import styled from 'styled-components'
+import { Button } from 'antd'
 
-export default defineComponent({
-  name: 'Home',
-  setup(props, ctx) {
-    return () => (
-      <>
-        <Header />
-        <RecentlyUpdate />
-      </>
-    )
-  },
-})
+function Home() {
+  return <div>home</div>
+}
+
+export default Home
