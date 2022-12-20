@@ -30,10 +30,12 @@ const Container = styled.div`
   background: ${(props: { bg?: string }) => props.bg || 'white'};
 `
 const LimitWidth = styled.div`
+  width: 100%;
   min-width: 768px;
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
+  justify-content: space-between;
   box-sizing: border-box;
 `
 const Logo = styled.img`
@@ -44,13 +46,13 @@ const Logo = styled.img`
 const Navbar = styled.div`
   display: flex;
   height: 100%;
+  width: 40%;
   align-items: center;
-  width: 70%;
   justify-content: space-around;
+  margin-right: 50px;
 `
 const Tab = styled.div``
 const RightTools = styled.div`
-  float: right;
   display: flex;
   height: 100%;
   align-items: center;
