@@ -1,11 +1,31 @@
-import axios from 'axios'
+import axios, { AxiosPromise } from 'axios'
+import { ReqMethodEnum } from './ReqMethodEnum'
 
 const instance = axios.create({
-  baseURL: 'https://some-domain.com/api/',
+  baseURL: '/',
   timeout: 1000,
   headers: { 'X-Custom-Header': 'foobar' },
 })
 
-const HTTP = () => {}
+function HTTP<T>(
+  url: string,
+  method: ReqMethodEnum,
+  data: {} = {}
+): Promise<T> {
+  return new Promise((resolve, reject) => {
+    instance
+      .request({
+        url,
+        method,
+        data,
+      })
+      .then((res: any) => {
+        resolve(res)
+      })
+      .catch((err) => {
+        reject(err)
+      })
+  })
+}
 
 export default HTTP

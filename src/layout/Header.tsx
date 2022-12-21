@@ -28,6 +28,8 @@ const Container = styled.div`
   border-bottom: 1px solid #f0f0f0;
   display: flex;
   background: ${(props: { bg?: string }) => props.bg || 'white'};
+  position: fixed;
+  top: 0;
 `
 const LimitWidth = styled.div`
   width: 100%;

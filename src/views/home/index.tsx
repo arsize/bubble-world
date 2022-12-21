@@ -1,8 +1,21 @@
 import styled from 'styled-components'
-import { Button } from 'antd'
+import Aside from './parts/Aside'
+import MainList from './parts/MainList'
 
 function Home() {
-  return <div>home</div>
+  return (
+    <Container>
+      <MainList></MainList>
+      <Aside></Aside>
+    </Container>
+  )
 }
+
+const Container = styled.div`
+  width: 960px;
+  height: 100vh;
+  margin: 0 auto;
+  margin-top: 86px;
+`
 
 export default Home
