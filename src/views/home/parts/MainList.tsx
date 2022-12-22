@@ -1,20 +1,28 @@
 import React, { useState, useEffect } from 'react'
-import Note from '../components/Note'
 import { getNoteList } from '../api/index'
+import { Note } from '@/interface'
+import NoteBox from '../components/NoteBox'
 
 function MainList() {
-  const [noteList, setNoteList] = useState(null)
+  const [noteList, setNoteList] = useState(Array<Note>)
   useEffect(() => {
-    getNoteList().then((res) => {
-      console.log('拿到了值', res)
-    })
+    const Fn = async () => {
+      let result = await getNoteList()
+      let arr = result.data.list
+      setNoteList(arr)
+    }
+    Fn()
   }, [])
 
   return (
     <div>
-      {/* {noteList!.data.map((item, index) => {
-        return <Note key={index}></Note>
-      })} */}
+      {noteList.map((item, index) => {
+        return (
+          <NoteBox detail={item}>
+            <div>children</div>
+          </NoteBox>
+        )
+      })}
     </div>
   )
 }
