@@ -13,6 +13,7 @@
         "src/*"
       ],
     },
+    "strictNullChecks": true,
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": false,
