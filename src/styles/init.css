@@ -1,4 +1,22 @@
-html,body{
-    margin: 0;
-    padding: 0;
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+a {
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul {
+  margin-bottom: 0;
+  list-style: none;
+}
+p {
+  margin: 0;
+}
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
 }

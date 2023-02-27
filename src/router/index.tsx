@@ -17,10 +17,6 @@ const LazyLoad = (Component: React.LazyExoticComponent<() => JSX.Element>) => {
 const router_config: RouteObject[] = [
   {
     path: '/',
-    element: <Navigate to="/home" />,
-  },
-  {
-    path: '/',
     id: 'root',
     loader: rootLoader,
     element: <Layout />,

@@ -1,67 +1,44 @@
-import styled from 'styled-components'
+import CustomIcon from '@/components/common/CustomIcon'
+import style from '@/less/header.module.less'
+import { Icons } from '@/types/enums'
 
 const Header: React.FC = (props) => {
   return (
-    <Container>
-      <LimitWidth>
-        <Logo src="/src/assets/nav-logo.png"></Logo>
-        <Navbar>
-          <Tab>首页</Tab>
-          <Tab>下载APP</Tab>
-          <Tab>会员</Tab>
-          <Tab>IT技术</Tab>
-        </Navbar>
-        <RightTools>
-          <Btn>Aa</Btn>
-          <Btn>登录</Btn>
-          <Btn>注册</Btn>
-          <Btn>写文章</Btn>
-        </RightTools>
-      </LimitWidth>
-    </Container>
+    <div className={style.header}>
+      <div className="d-header">
+        <div className="warp">
+          <div className="contents clearfix">
+            <div className="title">
+              <CustomIcon iconPath={Icons.SHUIDI} width={40} />
+            </div>
+            <div className="panel clearfix">
+              <span className="header-buttons">
+                <ul className="custom-header-links">
+                  <li className="headerLink vdm">
+                    <a href=""> 安装</a>
+                  </li>
+                  <li className="headerLink vdm">
+                    <a href=""> 安装</a>
+                  </li>
+                  <li className="headerLink vdm">
+                    <a href=""> 安装</a>
+                  </li>
+                  <li className="headerLink vdm">
+                    <a href=""> 安装</a>
+                  </li>
+                </ul>
+              </span>
+              <ul className="icons d-header-icons">
+                <li className="header-dropdown-toggle search-dropdown">
+                  {/* <CustomIcon iconPath={Icons.SEARCH} width={25} /> */}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
-
-const Container = styled.div`
-  width: 100%;
-  height: 56px;
-  border-bottom: 1px solid #f0f0f0;
-  display: flex;
-  background: ${(props: { bg?: string }) => props.bg || 'white'};
-  position: fixed;
-  top: 0;
-`
-const LimitWidth = styled.div`
-  width: 100%;
-  min-width: 768px;
-  max-width: 1440px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  box-sizing: border-box;
-`
-const Logo = styled.img`
-  line-height: 56px;
-  height: 56px;
-  float: left;
-`
-const Navbar = styled.div`
-  display: flex;
-  height: 100%;
-  width: 40%;
-  align-items: center;
-  justify-content: space-around;
-  margin-right: 50px;
-`
-const Tab = styled.div``
-const RightTools = styled.div`
-  display: flex;
-  height: 100%;
-  align-items: center;
-`
-const Btn = styled.div`
-  min-width: 80px;
-  padding: 6px 12px;
-`
 
 export default Header

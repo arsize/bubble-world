@@ -1,14 +1,16 @@
 import Header from './Header'
 import Footer from './Footer'
-import { Outlet } from 'react-router-dom'
+import Content from './Content'
+
+import '@/less/layout.less'
 
 const Layout: React.FC = () => {
   return (
-    <>
+    <div>
       <Header />
-      <Outlet />
+      <Content />
       <Footer />
-    </>
+    </div>
   )
 }
 

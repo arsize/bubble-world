@@ -13,6 +13,11 @@
         "src/*"
       ],
     },
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ],
     "strictNullChecks": true,
     "allowJs": false,
     "skipLibCheck": true,

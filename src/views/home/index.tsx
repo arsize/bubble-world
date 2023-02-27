@@ -1,21 +1,12 @@
-import styled from 'styled-components'
-import Aside from './parts/Aside'
-import MainList from './parts/MainList'
+import style from '@/less/home.module.less'
+import ListContent from '@/views/home/list'
 
 function Home() {
   return (
-    <Container>
-      <MainList></MainList>
-      <Aside></Aside>
-    </Container>
+    <div className={style.home}>
+      <ListContent />
+    </div>
   )
 }
-
-const Container = styled.div`
-  width: 960px;
-  height: 100vh;
-  margin: 0 auto;
-  margin-top: 86px;
-`
 
 export default Home
