@@ -1,5 +1,4 @@
 name: ci build
-# 触发workflow的条件
 on:
   push:
     # 只有master分支发生push事件时，才会触发workflow
