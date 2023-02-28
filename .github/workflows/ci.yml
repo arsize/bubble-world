@@ -9,7 +9,6 @@ env:
   SERVER_HOST: ${{ secrets.SERVER_HOST }} # 服务器IP地址
   USER_NAME: ${{ secrets.USER_NAME }} # 服务器用户名
 
-# jobs表示执行的一项或多项任务
 jobs:
   build: # 任务的job_id，具体名称自定义，这里build代表打包
     runs-on: ubuntu-latest # runs-on字段指定运行所需要的虚拟机环境。
