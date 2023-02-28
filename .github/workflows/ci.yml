@@ -1,7 +1,6 @@
 name: ci build
 on:
   push:
-    # 只有master分支发生push事件时，才会触发workflow
     branches: [main]
 
 env:
