@@ -1,7 +1,8 @@
 import CustomIcon from '@/components/common/CustomIcon'
 import style from '@/less/header.module.less'
 import { Icons } from '@/components/common/CustomIcon'
-import { Avatar } from 'antd'
+import { Avatar, Badge, Switch } from 'antd'
+import { BulbOutlined, SettingOutlined } from '@ant-design/icons'
 
 const Header: React.FC = (props) => {
   return (
@@ -29,6 +30,22 @@ const Header: React.FC = (props) => {
                   </li>
                   <li className="headerLink vdm">
                     <a href="">书库</a>
+                  </li>
+                  <li className="headerLink vdm">
+                    <Badge dot={true}>
+                      <BulbOutlined size={30} />
+                    </Badge>
+                  </li>
+                  <li className="headerLink">
+                    <SettingOutlined />
+                  </li>
+                  <li className="headerLink vdm">
+                    <Switch
+                      className="switch"
+                      checkedChildren="夜间"
+                      unCheckedChildren="白天"
+                      defaultChecked
+                    />
                   </li>
                 </ul>
               </div>

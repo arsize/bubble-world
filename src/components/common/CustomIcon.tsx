@@ -1,17 +1,24 @@
 interface Props {
   iconPath: Icons
   width: number
+  height?: number
+  color?: string
 }
 
 export enum Icons {
   SHUIDI = 'icon-shuidi',
   SEARCH = 'icon-chaxun',
+  WRIGHT = 'icon-yongyan',
 }
 
 const CustomIcon: React.FC<Props> = (props) => {
   return (
     <svg
-      style={{ width: `${props.width}px` }}
+      style={{
+        width: `${props.width}px`,
+        height: props.height ? props.height : 'auto',
+        color: props.color ? props.color : 'white',
+      }}
       className="icon custom-svg"
       aria-hidden="true"
     >

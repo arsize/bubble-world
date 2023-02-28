@@ -2,7 +2,8 @@ import ListContent from '@/views/home/list'
 import styled from 'styled-components'
 import { Tabs } from 'antd'
 import type { TabsProps } from 'antd'
-import MyAttention from './myAttention'
+import Block, { AsideEnum } from './aside'
+import Footer from '@/layout/Footer'
 
 const onChange = (key: string) => {
   console.log(key)
@@ -37,7 +38,14 @@ function Home() {
         </div>
       </Lists>
       <Aside>
-        <MyAttention />
+        <Block type={AsideEnum.WORLD} />
+        <Block type={AsideEnum.COLLECT} />
+
+        <Block type={AsideEnum.CREATE} />
+        <Block type={AsideEnum.RECOMMEND} />
+        <Block type={AsideEnum.LEADERBOARD} />
+
+        <Footer />
       </Aside>
     </AllBox>
   )
@@ -54,12 +62,5 @@ const Lists = styled.div`
   box-shadow: 0 1px 3px hsl(0deg 0% 7% / 10%);
   border-radius: 3px;
 `
-const Aside = styled.div`
-  width: 280px;
-  height: 100px;
-  padding: 10px;
-  border-radius: 3px;
-  background-color: white;
-  box-shadow: 0 1px 3px hsl(0deg 0% 7% / 10%);
-`
+const Aside = styled.div``
 export default Home
