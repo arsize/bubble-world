@@ -14,7 +14,7 @@ const LazyLoad = (Component: React.LazyExoticComponent<() => JSX.Element>) => {
   )
 }
 
-const router_config: RouteObject[] = [
+const _routes: RouteObject[] = [
   {
     path: '/',
     id: 'root',
@@ -22,8 +22,12 @@ const router_config: RouteObject[] = [
     element: <Layout />,
     children: [
       {
-        path: '/home',
+        index: true,
         element: LazyLoad(lazy(() => import('@/views/home'))),
+      },
+      {
+        path: '/stack',
+        element: LazyLoad(lazy(() => import('@/views/stack'))),
       },
     ],
   },
@@ -37,4 +41,4 @@ const router_config: RouteObject[] = [
   },
 ]
 
-export const routes = createBrowserRouter(router_config)
+export const routes = createBrowserRouter(_routes)

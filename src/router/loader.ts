@@ -1,3 +1,5 @@
+import { redirect } from 'react-router-dom'
+
 /**
  * @description 这个loader函数会在路由渲染前触发,所以可以用来做路由权限控制和登陆重定向
  * @description (取代请求拦截器中的登陆重定向)
@@ -5,9 +7,9 @@
  */
 export const rootLoader = async () => {
   console.log('页面加载前loader信息')
-  await setTimeout(() => {}, 1000)
 
   const name = 'zyh'
+
   return {
     name,
   }
