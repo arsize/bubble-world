@@ -1,16 +1,54 @@
 .listItem {
-  border-bottom: 1px solid #e9e9e9;
+  border-bottom: 1px solid #f0f2f7;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 12px 5px;
+  padding: 20px;
   :global {
-    .text-name {
-      font-size: 1em;
+    .avt-box {
+      width: 100%;
+      margin-bottom: 14px;
+      .name {
+        margin-left: 10px;
+        color: inherit;
+        font-size: 15px;
+      }
+      .signature {
+        margin-left: 10px;
+        color: #646464;
+        font-size: 14px;
+      }
     }
-    .right-info-box {
+    .top-box {
+      width: 100%;
+    }
+    .text-name {
+      font-size: 1.1em;
+    }
+    .content-pre-box {
+      width: 100%;
+      margin-top: 9px;
+      margin-bottom: 9px;
+      color: #121212;
+      line-height: 1.67;
+      font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue,
+        PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC,
+        WenQuanYi Micro Hei, sans-serif;
+      font-size: 15px;
+    }
+    .bottom-tools {
+      width: 100%;
+      margin-top: 9px;
       display: flex;
-      align-items: center;
+      font-size: 14px;
+      position: relative;
+
+      .answer-num {
+        margin-right: 10px;
+      }
+      .view-num {
+        margin-right: 10px;
+      }
     }
   }
 }

@@ -13,7 +13,7 @@ const ListContent = () => {
       setData(result.data.list)
     }
     f()
-  })
+  }, [])
 
   return (
     <ListContainer>
@@ -32,5 +32,8 @@ const ListContent = () => {
 
 const ListContainer = styled.div`
   padding-bottom: 50px;
+  .full-width {
+    width: 100%;
+  }
 `
 export default ListContent

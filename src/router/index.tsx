@@ -8,7 +8,7 @@ import { rootLoader } from './loader'
 
 const LazyLoad = (Component: React.LazyExoticComponent<() => JSX.Element>) => {
   return (
-    <Suspense fallback={<div>loading...</div>}>
+    <Suspense fallback={<div></div>}>
       <Component />
     </Suspense>
   )
