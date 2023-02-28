@@ -39,11 +39,11 @@ jobs:
 
       # 装依赖
       - name: Install
-        run: npm
+        run: yarn
 
       # 打包
       - name: Build
-        run: npm build
+        run: yarn build
 
       # 上传打包资源
       - name: Deploy
