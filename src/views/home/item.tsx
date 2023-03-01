@@ -25,7 +25,9 @@ const Item: React.FC = () => {
           <span style={{ marginLeft: '3px' }}>3</span>
         </div>
         <div className="time">2023-2-28 11:36</div>
-        <div className="from">来自世界·黑猫警长</div>
+        <div className="from">
+          来自世界·<span className="hover-link">黑猫警长</span>
+        </div>
       </div>
     </div>
   )

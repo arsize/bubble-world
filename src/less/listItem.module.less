@@ -4,7 +4,6 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  cursor: pointer;
   :global {
     .avt-box {
       width: 100%;
@@ -25,6 +24,10 @@
     }
     .text-name {
       font-size: 1.1em;
+      cursor: pointer;
+      &:hover {
+        color: #175199;
+      }
     }
     .content-pre-box {
       width: 100%;
@@ -36,6 +39,10 @@
         PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC,
         WenQuanYi Micro Hei, sans-serif;
       font-size: 15px;
+      cursor: pointer;
+      &:hover {
+        color: #646464;
+      }
     }
     .bottom-tools {
       width: 100%;
@@ -54,6 +61,11 @@
       .from {
         position: absolute;
         right: 0;
+        &:hover {
+          .hover-link {
+            text-decoration: underline;
+          }
+        }
       }
     }
   }
