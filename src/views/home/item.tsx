@@ -3,7 +3,7 @@ import { Avatar } from 'antd'
 import { FireOutlined, HeartOutlined } from '@ant-design/icons'
 
 const Item: React.FC = () => {
-  let a =
+  const a =
     '这里是预览区,这里是预览区这里是预览区这里是预览区这里是预览区这里是预览区这里是预览区,览区这里是预览区览区这里是预览区览区这里是预览区览区这里是预览区览区这里是预览区'
   return (
     <div className={style.listItem}>

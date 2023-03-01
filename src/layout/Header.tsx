@@ -4,7 +4,7 @@ import { Icons } from '@/components/common/CustomIcon'
 import { Avatar, Badge, Switch } from 'antd'
 import { BulbOutlined, SettingOutlined } from '@ant-design/icons'
 
-const Header: React.FC = (props) => {
+const Header: React.FC = () => {
   return (
     <div className={style.header}>
       <div className="d-header">

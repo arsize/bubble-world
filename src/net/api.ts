@@ -1,7 +1,5 @@
-import { DataModel, ResponseData } from './http'
-import HTTP from './http'
-import { ReqMethodEnum } from './ReqMethodEnum'
+import http from './http'
 
-export const getData = () => {
-  return HTTP<ResponseData<DataModel>>('/mock/note_list', ReqMethodEnum.GET, {})
+export function fetchInfo() {
+  return http.get<LoginInfo[]>('/mock/info')
 }

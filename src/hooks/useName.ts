@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 function useName(age: number) {
-  const [name, setName] = useState('名称')
+  const [name] = useState('名称')
   useEffect(() => {
     setTimeout(() => {}, 2000)
   }, [age])

@@ -1,16 +1,15 @@
-import { getData } from '@/net/api'
-import { Note } from '@/net/http'
+import { fetchInfo } from '@/net/api'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Item from './item'
 
 const ListContent = () => {
-  const [data, setData] = useState<Note[]>([])
+  const [data, setData] = useState<LoginInfo[]>([])
   useEffect(() => {
-    let f = async () => {
-      const result = await getData()
+    const f = async () => {
+      const result = await fetchInfo()
       console.log(result)
-      setData(result.data.list)
+      setData(result)
     }
     f()
   }, [])

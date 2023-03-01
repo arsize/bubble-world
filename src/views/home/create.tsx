@@ -1,4 +1,3 @@
-import CustomIcon, { Icons } from '@/components/common/CustomIcon'
 import { HighlightOutlined } from '@ant-design/icons'
 import { Button } from 'antd'
 import styled from 'styled-components'

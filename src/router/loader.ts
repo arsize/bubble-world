@@ -1,4 +1,3 @@
-import { redirect } from 'react-router-dom'
 
 /**
  * @description 这个loader函数会在路由渲染前触发,所以可以用来做路由权限控制和登陆重定向

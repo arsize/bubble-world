@@ -1,50 +1,52 @@
-import axios, { AxiosPromise, AxiosHeaders } from 'axios'
-import { ReqMethodEnum } from './ReqMethodEnum'
+import axios, {
+  AxiosError,
+  AxiosInstance,
+  AxiosRequestConfig,
+  AxiosResponse,
+} from 'axios'
 
-const instance = axios.create({
+const instance: AxiosInstance = axios.create({
   baseURL: '/',
   timeout: 1000,
   headers: { 'X-Custom-Header': 'arsize' },
 })
 
-function HTTP<T>(
-  url: string,
-  method: ReqMethodEnum,
-  data: {} = {}
-): Promise<T> {
-  return new Promise((resolve, reject) => {
-    instance
-      .request({
-        url,
-        method,
-        data,
-      })
-      .then((res: any) => {
-        resolve(res)
-      })
-      .catch((err) => {
-        reject(err)
-      })
-  })
-}
-export interface ResponseData<T> {
-  config?: any
-  data: T
-  headers?: AxiosHeaders
-  request?: XMLHttpRequest
-  status?: number
-  statusText?: string
+instance.interceptors.request.use(
+  (config: AxiosRequestConfig) => {
+    return config
+  },
+  (err: AxiosError) => {
+    return Promise.reject(err)
+  }
+)
+
+instance.interceptors.response.use(
+  (response: AxiosResponse) => {
+    const { code, message, data } = response.data
+    if (code == 0) {
+      return data
+    } else {
+      // 业务错误
+      return Promise.reject(new Error(message))
+    }
+  },
+  (err: AxiosError) => {
+    const status = err.response?.status
+    switch (status) {
+      case 401:
+        break
+
+      default:
+        break
+    }
+    return Promise.reject(err)
+  }
+)
+
+export const http = {
+  get<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
+    return instance.get(url, config)
+  },
 }
 
-export interface DataModel {
-  list: Array<Note>
-}
-
-export interface Note {
-  id: string
-  title: string
-  content: string
-  author: string
-}
-
-export default HTTP
+export default http

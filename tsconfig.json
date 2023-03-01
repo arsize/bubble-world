@@ -34,6 +34,10 @@
     "types": [
       "node"
     ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./typings"
+    ],
     "jsx": "react-jsx"
   },
   "include": [
@@ -43,5 +47,5 @@
     {
       "path": "./tsconfig.node.json"
     }
-  ]
+  ],
 }
