@@ -13,7 +13,7 @@ const Header: React.FC = (props) => {
             <div className="title">
               <CustomIcon iconPath={Icons.SHUIDI} width={40} />
               <div style={{ marginLeft: '10px' }}>
-                滴水书屋{' '}
+                滴水书屋
                 <span style={{ fontSize: '10px', color: '#333333' }}>
                   Beta1.0
                 </span>

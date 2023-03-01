@@ -27,7 +27,6 @@ const Block = (props: Props) => {
     case AsideEnum.COLLECT:
       asideBlock = <Collect />
       break
-
     case AsideEnum.CREATE:
       asideBlock = <Create />
       break
