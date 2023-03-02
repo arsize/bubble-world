@@ -40,7 +40,7 @@ jobs:
 
       # 打包
       - name: Build
-        run: yarn build
+        run: npm run build
 
       # 上传打包资源
       - name: Deploy
