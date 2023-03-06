@@ -11,27 +11,11 @@ const Header: React.FC = () => {
   const items: MenuProps['items'] = [
     {
       key: 1,
-      label: (
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.antgroup.com"
-        >
-          我的主页
-        </a>
-      ),
+      label: <div onClick={() => nav('/user')}>我的主页</div>,
     },
     {
       key: 2,
-      label: (
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.antgroup.com"
-        >
-          退出
-        </a>
-      ),
+      label: <div onClick={() => nav('/')}>退出</div>,
     },
   ]
   return (
@@ -84,7 +68,6 @@ const Header: React.FC = () => {
               <div className="user-avatar">
                 <Dropdown menu={{ items }} placement="bottom">
                   <Avatar
-                    onClick={() => nav('/user')}
                     style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}
                   >
                     A

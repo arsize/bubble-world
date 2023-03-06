@@ -19,3 +19,7 @@ declare interface Author {
   signature: string
   photo: string
 }
+
+declare interface ThemeWorld {
+  worldName: string
+}

@@ -2,6 +2,7 @@ import React from 'react'
 import style from '@/less/world.module.less'
 import ArticleList from './articleList'
 import Footer from '@/layout/Footer'
+import BookCover from './cover'
 
 import {
   PushpinOutlined,
@@ -13,7 +14,9 @@ import {
 const WorldPage = () => {
   return (
     <React.Fragment>
-      <div className={style.infoPannel}></div>
+      <div className={style.infoPannel}>
+        <BookCover />
+      </div>
       <div className={style.articleList}>
         <div className="left-list">
           <ArticleList />
@@ -33,16 +36,17 @@ const WorldPage = () => {
           </div>
           <div className="block">
             <div className="title">
-              <MessageOutlined />
-              <div className="rules">讨论区</div>
-            </div>
-          </div>
-          <div className="block">
-            <div className="title">
               <BookOutlined />
               <div className="rules">入库作品</div>
             </div>
           </div>
+          <div className="block">
+            <div className="title">
+              <MessageOutlined />
+              <div className="rules">讨论区</div>
+            </div>
+          </div>
+
           <Footer />
         </div>
       </div>

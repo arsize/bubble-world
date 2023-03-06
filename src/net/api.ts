@@ -7,3 +7,7 @@ export function fetchInfo() {
 export function fetchArticles() {
   return http.get<Aricle[]>('/mock/articles')
 }
+
+export function fetchWorlds() {
+  return http.get<ThemeWorld[]>('/mock/worlds')
+}
