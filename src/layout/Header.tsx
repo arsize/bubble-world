@@ -51,14 +51,17 @@ const Header: React.FC = () => {
             <div className="panel clearfix">
               <div className="header-buttons">
                 <ul className="custom-header-links">
-                  <li className="headerLink vdm actived">
-                    <a href="/">首页</a>
+                  <li
+                    onClick={() => nav('/')}
+                    className="headerLink vdm actived"
+                  >
+                    <span>首页</span>
                   </li>
-                  <li className="headerLink vdm">
-                    <a href="/all">世界</a>
+                  <li onClick={() => nav('/all')} className="headerLink vdm">
+                    <span>世界</span>
                   </li>
-                  <li className="headerLink vdm">
-                    <a href="/stack">库藏</a>
+                  <li onClick={() => nav('/stack')} className="headerLink vdm">
+                    <span>库藏</span>
                   </li>
                   <li className="headerLink vdm">
                     <Badge dot={true}>
