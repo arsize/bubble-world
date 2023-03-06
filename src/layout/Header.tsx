@@ -1,19 +1,48 @@
 import CustomIcon from '@/components/common/CustomIcon'
 import style from '@/less/header.module.less'
 import { Icons } from '@/components/common/CustomIcon'
-import { Avatar, Badge, Switch } from 'antd'
+import { Avatar, Badge, Switch, Dropdown, MenuProps } from 'antd'
 import { BulbOutlined, SettingOutlined } from '@ant-design/icons'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Header: React.FC = () => {
+  const nav = useNavigate()
+  const items: MenuProps['items'] = [
+    {
+      key: 1,
+      label: (
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.antgroup.com"
+        >
+          我的主页
+        </a>
+      ),
+    },
+    {
+      key: 2,
+      label: (
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.antgroup.com"
+        >
+          退出
+        </a>
+      ),
+    },
+  ]
   return (
     <div className={style.header}>
       <div className="d-header">
         <div className="warp">
           <div className="contents clearfix">
-            <div className="title">
+            <div className="title" onClick={() => nav('/')}>
               <CustomIcon iconPath={Icons.SHUIDI} width={40} />
               <div style={{ marginLeft: '10px' }}>
-                滴水书屋
+                滴水世界&nbsp;
                 <span style={{ fontSize: '10px', color: '#333333' }}>
                   Beta1.0
                 </span>
@@ -23,13 +52,13 @@ const Header: React.FC = () => {
               <div className="header-buttons">
                 <ul className="custom-header-links">
                   <li className="headerLink vdm actived">
-                    <a href="">首页</a>
+                    <a href="/">首页</a>
                   </li>
                   <li className="headerLink vdm">
-                    <a href="">世界</a>
+                    <a href="/all">世界</a>
                   </li>
                   <li className="headerLink vdm">
-                    <a href="">书库</a>
+                    <a href="/stack">库藏</a>
                   </li>
                   <li className="headerLink vdm">
                     <Badge dot={true}>
@@ -50,11 +79,14 @@ const Header: React.FC = () => {
                 </ul>
               </div>
               <div className="user-avatar">
-                <Avatar
-                  style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}
-                >
-                  A
-                </Avatar>
+                <Dropdown menu={{ items }} placement="bottom">
+                  <Avatar
+                    onClick={() => nav('/user')}
+                    style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}
+                  >
+                    A
+                  </Avatar>
+                </Dropdown>
               </div>
             </div>
           </div>

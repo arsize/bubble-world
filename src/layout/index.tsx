@@ -1,8 +1,9 @@
 import Header from './Header'
 import Content from './Content'
 import { FloatButton } from 'antd'
+import React from 'react'
 
-import '@/less/global.less'
+import '@/less/layout.less'
 
 const Layout: React.FC = () => {
   return (

@@ -1,15 +1,15 @@
-import { fetchInfo } from '@/net/api'
+import { fetchArticles } from '@/net/api'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import Item from './item'
+import ArticleItem from '@/components/ArticleItem'
+import React from 'react'
 
 const ListContent = () => {
-  const [data, setData] = useState<LoginInfo[]>([])
+  const [aricles, setAricles] = useState<Aricle[]>([])
   useEffect(() => {
     const f = async () => {
-      const result = await fetchInfo()
-      console.log(result)
-      setData(result)
+      const result = await fetchArticles()
+      setAricles(result)
     }
     f()
   }, [])
@@ -19,8 +19,8 @@ const ListContent = () => {
       <div className="full-width">
         <div className="list-area">
           <div className="contents ember-view">
-            {data.map((k, i) => {
-              return <Item key={i} />
+            {aricles.map((k, i) => {
+              return <ArticleItem {...k} key={i} />
             })}
           </div>
         </div>
@@ -30,7 +30,7 @@ const ListContent = () => {
 }
 
 const ListContainer = styled.div`
-  padding-bottom: 50px;
+  margin-bottom: 5px;
   .full-width {
     width: 100%;
   }

@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
-import World from './world'
+import WorldPanel from './worldPanel'
 import Create from './create'
 import Leaderboard from './leaderBoard'
 import Collect from './collect'
 import Recommend from './recommend'
+import React from 'react'
 
 export enum AsideEnum {
   WORLD = '热门世界',
@@ -18,11 +19,11 @@ interface Props {
   type: AsideEnum
 }
 
-const Block = (props: Props) => {
+const Block: React.FC<Props> = (props) => {
   let asideBlock
   switch (props.type) {
     case AsideEnum.WORLD:
-      asideBlock = <World />
+      asideBlock = <WorldPanel />
       break
     case AsideEnum.COLLECT:
       asideBlock = <Collect />

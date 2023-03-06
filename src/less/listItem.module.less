@@ -8,11 +8,21 @@
     .avt-box {
       width: 100%;
       margin-bottom: 14px;
+      display: flex;
+      align-items: center;
       .name {
         margin-left: 10px;
         color: inherit;
         font-size: 15px;
       }
+      .dividing {
+        width: 1px;
+        height: 14px;
+        display: inline-block;
+        background: #e5e6eb;
+        margin: 0 8px;
+      }
+
       .signature {
         margin-left: 10px;
         color: #646464;
@@ -61,6 +71,7 @@
       .from {
         position: absolute;
         right: 0;
+        cursor: pointer;
         &:hover {
           .hover-link {
             text-decoration: underline;

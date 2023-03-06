@@ -4,6 +4,7 @@ import { Tabs } from 'antd'
 import type { TabsProps } from 'antd'
 import Block, { AsideEnum } from './aside'
 import Footer from '@/layout/Footer'
+import React from 'react'
 
 const onChange = (key: string) => {
   console.log(key)

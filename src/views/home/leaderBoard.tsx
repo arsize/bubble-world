@@ -1,5 +1,6 @@
 import { TrophyOutlined } from '@ant-design/icons'
 import styled from 'styled-components'
+import React from 'react'
 
 const Leaderboard = () => {
   return (

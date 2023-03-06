@@ -1,6 +1,7 @@
 import { HeartOutlined } from '@ant-design/icons'
-import { Avatar } from 'antd'
-import { WorldPanel } from './world'
+import { WorldPanel } from './worldPanel'
+import React from 'react'
+import WorldRoundIcon from '@/components/WorldRoundIcon'
 
 const Collect = () => {
   return (
@@ -10,18 +11,8 @@ const Collect = () => {
         <div className="title">已订阅</div>
       </div>
       <div className="world-list">
-        <div className="block">
-          <div className="top-round">
-            <Avatar size={28}></Avatar>
-          </div>
-          <div className="world-name">黑猫警长</div>
-        </div>
-        <div className="block">
-          <div className="top-round">
-            <Avatar size={28}></Avatar>
-          </div>
-          <div className="world-name">九州</div>
-        </div>
+        <WorldRoundIcon width="20%" iconSize={28} name={'黑猫警长'} />
+        <WorldRoundIcon width="20%" iconSize={28} name={'九州'} />
       </div>
     </WorldPanel>
   )
