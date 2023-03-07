@@ -15,10 +15,6 @@ const items: TabsProps['items'] = [
     key: '1',
     label: `最新`,
   },
-  {
-    key: '2',
-    label: `关注`,
-  },
 ]
 
 function Home() {
