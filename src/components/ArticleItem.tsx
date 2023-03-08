@@ -1,11 +1,17 @@
 import { FireOutlined, HeartOutlined } from '@ant-design/icons'
-import { theme } from 'antd'
+import { theme, Popover } from 'antd'
 import { AliasToken } from 'antd/es/theme/internal'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 const { useToken } = theme
+const content = (
+  <div>
+    <p>Content</p>
+    <p>Content</p>
+  </div>
+)
 
 const ArticleItem: React.FC<Aricle> = ({
   author,
@@ -54,9 +60,11 @@ const ArticleItem: React.FC<Aricle> = ({
           style={{ fontSize: '13px', color: token.colorTextTertiary }}
         >
           来自&nbsp;·&nbsp;
-          <span className="hover-link" onClick={() => nav('/world')}>
-            {world}
-          </span>
+          <Popover content={content} title="Title">
+            <span className="hover-link" onClick={() => nav('/world')}>
+              {world}
+            </span>
+          </Popover>
         </div>
       </div>
     </ListItemWrapper>

@@ -74,7 +74,7 @@ const Header: React.FC = () => {
                     </Badge>
                   </li>
                   <li className="headerLink">
-                    <SettingOutlined />
+                    <SettingOutlined className="settingsIcon" />
                   </li>
                   <li className="headerLink vdm">
                     <Switch
@@ -192,6 +192,13 @@ const HeaderWrapper = styled.div`
                 align-items: center;
                 padding: 0 12px;
                 box-sizing: border-box;
+                &:hover {
+                  .settingsIcon {
+                    transform: rotate(360deg);
+                    transition: transform 1s;
+                  }
+                }
+
                 .switch {
                   background-color: black;
                 }
