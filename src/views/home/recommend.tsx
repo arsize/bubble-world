@@ -1,36 +1,48 @@
 import { UsergroupAddOutlined } from '@ant-design/icons'
 import styled from 'styled-components'
 import React from 'react'
-import { Carousel } from 'antd'
+import { Card, Carousel, theme } from 'antd'
 import AvatarItem from '@/components/AvatarItem'
 import { PlusOutlined } from '@ant-design/icons'
+import { AliasToken } from 'antd/es/theme/internal'
+import { AsideEnum } from './aside'
+
+const { useToken } = theme
 
 const Recommend = () => {
   const onChange = (currentSlide: number) => {
     console.log(currentSlide)
   }
   return (
-    <RecommendBox>
-      <div className="block-line">
-        <UsergroupAddOutlined />
-        <div className="title">推荐关注</div>
-      </div>
-      <Carousel afterChange={onChange}>
-        <div>
-          <UserCarouselItem />
-          <UserCarouselItem />
-        </div>
-        <div>
-          <h3>1</h3>
-        </div>
-      </Carousel>
-    </RecommendBox>
+    <RecommendWrapper>
+      <Card
+        title={
+          <div>
+            <UsergroupAddOutlined />
+            <span style={{ marginLeft: '5px' }}>{AsideEnum.RECOMMEND}</span>
+          </div>
+        }
+        size="small"
+        loading={false}
+      >
+        <Carousel afterChange={onChange}>
+          <div>
+            <UserCarouselItem />
+            <UserCarouselItem />
+          </div>
+          <div>
+            <h3>1</h3>
+          </div>
+        </Carousel>
+      </Card>
+    </RecommendWrapper>
   )
 }
 
 const UserCarouselItem = () => {
+  const { token } = useToken()
   return (
-    <UserCarouseBox>
+    <UserCarouseBox token={token}>
       <div className="user-left">
         <AvatarItem shape="square" iconSize={28} />
         <span className="author-name">{'高川'}</span>
@@ -43,13 +55,15 @@ const UserCarouselItem = () => {
   )
 }
 
-const RecommendBox = styled.div`
+const RecommendWrapper = styled.div`
   .block-line {
     margin-bottom: 23px;
   }
 `
 
-const UserCarouseBox = styled.div`
+const UserCarouseBox = styled.div.attrs(
+  (props: { token: Partial<AliasToken> }) => props
+)`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,7 +80,6 @@ const UserCarouseBox = styled.div`
   }
   .right-btn {
     font-size: 13px;
-    color: #056de8;
     .focus {
       margin-left: 5px;
     }

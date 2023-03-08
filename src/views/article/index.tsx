@@ -5,7 +5,7 @@ import { Button } from 'antd'
 
 const Article = () => {
   return (
-    <Content>
+    <ArticleWrapper>
       <div className="article-container">文字</div>
       <div className="right-aside">
         <AvatarItem shape="square" iconSize={40}>
@@ -15,11 +15,11 @@ const Article = () => {
           关注
         </Button>
       </div>
-    </Content>
+    </ArticleWrapper>
   )
 }
 
-const Content = styled.div`
+const ArticleWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;

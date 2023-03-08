@@ -1,17 +1,16 @@
 import create from 'zustand'
 
 interface BearState {
-  bears: number
-  increase: () => void
+  light: boolean
+  change: () => void
 }
 
-const useBearStore = create<BearState>((set) => ({
-  bears: 0,
-  increase: () =>
+const useThemeStore = create<BearState>((set) => ({
+  light: true,
+  change: () =>
     set((state) => ({
-      bears: state.bears + 1,
+      light: !state.light,
     })),
-  removeAllBears: () => set({ bears: 0 }),
 }))
 
-export default useBearStore
+export default useThemeStore

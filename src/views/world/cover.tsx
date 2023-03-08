@@ -3,14 +3,14 @@ import styled from 'styled-components'
 
 const BookCover = () => {
   return (
-    <CoverBox>
+    <CoverWrapper>
       <div className="left"></div>
       <div className="right"></div>
-    </CoverBox>
+    </CoverWrapper>
   )
 }
 
-const CoverBox = styled.div`
+const CoverWrapper = styled.div`
   width: 100%;
   height: 100%;
   cursor: pointer;

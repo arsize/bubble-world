@@ -15,7 +15,7 @@ const AllWorld = () => {
     f()
   }, [])
   return (
-    <AllBox>
+    <AllWorldWrapper>
       <div className="topBar">
         <h4>主题世界</h4>
       </div>
@@ -24,11 +24,11 @@ const AllWorld = () => {
           return <WorldItem key={i} {...k} />
         })}
       </div>
-    </AllBox>
+    </AllWorldWrapper>
   )
 }
 
-const AllBox = styled.div`
+const AllWorldWrapper = styled.div`
   .topBar {
     width: 100%;
     height: 100px;

@@ -1,76 +1,77 @@
 import { TrophyOutlined } from '@ant-design/icons'
 import styled from 'styled-components'
 import React from 'react'
+import { Card } from 'antd'
+import { AsideEnum } from './aside'
 
 const Leaderboard = () => {
   return (
-    <BorardBox>
-      <div className="block-line">
-        <TrophyOutlined />
-        <div className="title">字数排行</div>
-        <div className="more">
-          <span style={{ color: '#056de8' }}>日</span> / <span>周</span>
+    <BorardWrapper>
+      <Card
+        title={
+          <div>
+            <TrophyOutlined />
+            <span style={{ marginLeft: '5px' }}>{AsideEnum.LEADERBOARD}</span>
+          </div>
+        }
+        size="small"
+        loading={false}
+      >
+        <div className="block">
+          <div className="num-line">
+            <div className="name">
+              <span>arsize</span>
+            </div>
+            <div className="line">
+              <div className="real-num-line"></div>
+            </div>
+          </div>
+          <div className="num-line">
+            <div className="name">
+              <span>夏天</span>
+            </div>
+            <div className="line">
+              <div className="real-num-line"></div>
+            </div>
+          </div>
+          <div className="num-line">
+            <div className="name">
+              <span>夏天</span>
+            </div>
+            <div className="line">
+              <div className="real-num-line"></div>
+            </div>
+          </div>
+          <div className="num-line">
+            <div className="name">
+              <span>sunskey</span>
+            </div>
+            <div className="line">
+              <div className="real-num-line"></div>
+            </div>
+          </div>
+          <div className="num-line">
+            <div className="name">
+              <span>夏天</span>
+            </div>
+            <div className="line">
+              <div className="real-num-line"></div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="block">
-        <div className="num-line">
-          <div className="name">
-            <span>arsize</span>
-          </div>
-          <div className="line">
-            <div className="real-num-line"></div>
-          </div>
-        </div>
-        <div className="num-line">
-          <div className="name">
-            <span>夏天</span>
-          </div>
-          <div className="line">
-            <div className="real-num-line"></div>
-          </div>
-        </div>
-        <div className="num-line">
-          <div className="name">
-            <span>夏天</span>
-          </div>
-          <div className="line">
-            <div className="real-num-line"></div>
-          </div>
-        </div>
-        <div className="num-line">
-          <div className="name">
-            <span>sunskey</span>
-          </div>
-          <div className="line">
-            <div className="real-num-line"></div>
-          </div>
-        </div>
-        <div className="num-line">
-          <div className="name">
-            <span>夏天</span>
-          </div>
-          <div className="line">
-            <div className="real-num-line"></div>
-          </div>
-        </div>
-      </div>
-    </BorardBox>
+      </Card>
+    </BorardWrapper>
   )
 }
 
-const BorardBox = styled.div`
-  .block-line {
-    position: relative;
-    .more {
-      position: absolute;
-      right: 0;
-      font-size: 13px;
-      color: #777777;
-      cursor: pointer;
-    }
+const BorardWrapper = styled.div`
+  .more {
+    font-size: 13px;
+    color: #777777;
+    cursor: pointer;
   }
   .block {
-    margin-top: 10px;
+    margin-top: 5px;
     width: 100%;
     .num-line {
       width: 100%;

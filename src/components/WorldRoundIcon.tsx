@@ -30,7 +30,6 @@ const WorldIconBox = styled.div.attrs((props: { width: string }) => props)`
   display: flex;
   .world-name {
     font-size: 12px;
-    color: #333;
     margin-top: 7px;
   }
 `

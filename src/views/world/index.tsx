@@ -1,5 +1,4 @@
 import React from 'react'
-import style from '@/less/world.module.less'
 import ArticleList from './articleList'
 import Footer from '@/layout/Footer'
 import BookCover from './cover'
@@ -10,14 +9,15 @@ import {
   MessageOutlined,
   BookOutlined,
 } from '@ant-design/icons'
+import styled from 'styled-components'
 
 const WorldPage = () => {
   return (
     <React.Fragment>
-      <div className={style.infoPannel}>
+      <InfoPannelWrapper>
         <BookCover />
-      </div>
-      <div className={style.articleList}>
+      </InfoPannelWrapper>
+      <InfoPannelWrapper>
         <div className="left-list">
           <ArticleList />
         </div>
@@ -49,9 +49,52 @@ const WorldPage = () => {
 
           <Footer />
         </div>
-      </div>
+      </InfoPannelWrapper>
     </React.Fragment>
   )
 }
 
+const InfoPannelWrapper = styled.div`
+  width: 100%;
+  height: 200px;
+  background-color: white;
+  box-shadow: 0 1px 3px hsl(0deg 0% 7% / 10%);
+  border-radius: 5px;
+`
+const ArticleListWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 10px 0;
+  .left-list {
+    width: 70%;
+    padding: 10px;
+    padding-bottom: 0;
+    background-color: white;
+    box-shadow: 0 1px 3px hsl(0deg 0% 7% / 10%);
+  }
+  .right-aside {
+    width: 28%;
+
+    .block {
+      padding: 10px;
+      background-color: white;
+      box-shadow: 0 1px 3px hsl(0deg 0% 7% / 10%);
+      margin-bottom: 10px;
+      .title {
+        width: 100%;
+        padding: 5px 0;
+        align-items: center;
+        display: flex;
+        font-size: 14px;
+        color: #444;
+        font-weight: 500;
+        .rules {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+`
 export default WorldPage

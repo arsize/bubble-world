@@ -41,16 +41,12 @@ const Block: React.FC<Props> = (props) => {
     default:
       break
   }
-  return <ContainerBox>{asideBlock}</ContainerBox>
+  return <ContainerWrapper>{asideBlock}</ContainerWrapper>
 }
 
-const ContainerBox = styled.div`
+const ContainerWrapper = styled.div`
   box-sizing: border-box;
   width: 280px;
-  padding: 15px;
-  border-radius: 3px;
-  background-color: white;
-  box-shadow: 0 1px 3px hsl(0deg 0% 7% / 10%);
   margin-bottom: 20px;
 
   .block-line {

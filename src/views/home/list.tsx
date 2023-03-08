@@ -15,7 +15,7 @@ const ListContent = () => {
   }, [])
 
   return (
-    <ListContainer>
+    <ListWrapper>
       <div className="full-width">
         <div className="list-area">
           <div className="contents ember-view">
@@ -25,11 +25,11 @@ const ListContent = () => {
           </div>
         </div>
       </div>
-    </ListContainer>
+    </ListWrapper>
   )
 }
 
-const ListContainer = styled.div`
+const ListWrapper = styled.div`
   margin-bottom: 5px;
   .full-width {
     width: 100%;

@@ -1,13 +1,14 @@
 import Header from './Header'
 import Content from './Content'
-import { FloatButton } from 'antd'
+import { FloatButton, theme } from 'antd'
 import React from 'react'
 
-import '@/less/layout.less'
+const { useToken } = theme
 
 const Layout: React.FC = () => {
+  const { token } = useToken()
   return (
-    <div>
+    <div style={{ backgroundColor: token.colorBgLayout }}>
       <Header />
       <Content />
       <FloatButton.BackTop visibilityHeight={0} />

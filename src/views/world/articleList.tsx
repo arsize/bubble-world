@@ -18,7 +18,7 @@ const ArticleList = () => {
     },
   }
   return (
-    <ListContent>
+    <ListWarpper>
       <div className="search-rules">
         <div className="num">100篇作品</div>
         <div className="tools">最新 / 最热</div>
@@ -26,11 +26,11 @@ const ArticleList = () => {
       <div className="list">
         <ArticleItem {...item} />
       </div>
-    </ListContent>
+    </ListWarpper>
   )
 }
 
-const ListContent = styled.div`
+const ListWarpper = styled.div`
   .search-rules {
     display: flex;
     font-size: 14px;

@@ -1,13 +1,20 @@
 import { Outlet } from 'react-router-dom'
-import style from '@/less/content.module.less'
 import React from 'react'
+import styled from 'styled-components'
 
 const Content = () => {
   return (
-    <div className={style['main-outlet']}>
+    <MainWrapper>
       <Outlet />
-    </div>
+    </MainWrapper>
   )
 }
+
+const MainWrapper = styled.div`
+  padding-top: 2.5em;
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+`
 
 export default Content
