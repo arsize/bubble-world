@@ -25,7 +25,10 @@ const ArticleItem: React.FC<Aricle> = ({
         <span style={{ fontSize: '13px', color: token.colorTextTertiary }}>
           {author.name}
         </span>
-        <span className="dividing"></span>
+        <span
+          className="dividing"
+          style={{ backgroundColor: token.colorSplit }}
+        ></span>
         <span style={{ fontSize: '13px', color: token.colorTextTertiary }}>
           {author.signature}
         </span>
@@ -46,7 +49,10 @@ const ArticleItem: React.FC<Aricle> = ({
           <span style={{ marginLeft: '5px' }}>{like}</span>
         </div>
         <div className="time">{ctime}</div>
-        <div className="from">
+        <div
+          className="from"
+          style={{ fontSize: '13px', color: token.colorTextTertiary }}
+        >
           来自世界&nbsp;·&nbsp;
           <span className="hover-link" onClick={() => nav('/world')}>
             {world}
@@ -80,7 +86,6 @@ const ListItemWrapper = styled.div.attrs(
       width: 1px;
       height: 14px;
       display: inline-block;
-      background: #e5e6eb;
       margin: 0 8px;
     }
 
