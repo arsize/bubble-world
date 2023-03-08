@@ -11,7 +11,7 @@ const Content = () => {
 }
 
 const MainWrapper = styled.div`
-  padding-top: 2.5em;
+  padding-top: 20px;
   width: 1000px;
   margin-right: auto;
   margin-left: auto;

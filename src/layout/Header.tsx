@@ -12,7 +12,7 @@ const { useToken } = theme
 const Header: React.FC = () => {
   const nav = useNavigate()
   const { token } = useToken()
-  const { change } = useThemeStore()
+  const { light, change } = useThemeStore()
   const items: MenuProps['items'] = [
     {
       key: 1,
@@ -28,7 +28,10 @@ const Header: React.FC = () => {
   }
   return (
     <HeaderWrapper
-      style={{ backgroundColor: token.colorBgLayout, color: token.colorText }}
+      style={{
+        backgroundColor: light ? '#fff' : token.colorBgLayout,
+        color: token.colorText,
+      }}
     >
       <div className="d-header">
         <div className="warp">
