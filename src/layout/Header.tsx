@@ -105,12 +105,22 @@ const Header: React.FC = () => {
             </Dropdown>
             <div className="title">滴水世界</div>
           </div>
+          <div className="mobile-right">
+            <div className="mobile-switch">
+              <Switch
+                onClick={changeTheme}
+                className="switch"
+                checkedChildren="夜间"
+                unCheckedChildren="白天"
+              />
+            </div>
 
-          <Dropdown menu={{ items }} placement="bottomLeft">
-            <Avatar style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}>
-              A
-            </Avatar>
-          </Dropdown>
+            <Dropdown menu={{ items }} placement="bottomLeft">
+              <Avatar style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}>
+                A
+              </Avatar>
+            </Dropdown>
+          </div>
         </div>
       </div>
     </HeaderWrapper>
@@ -225,6 +235,13 @@ const HeaderWrapper = styled.div`
         align-items: center;
         .title {
           margin-left: 15px;
+        }
+      }
+      .mobile-right {
+        display: flex;
+        align-items: center;
+        .mobile-switch {
+          margin-right: 15px;
         }
       }
     }
