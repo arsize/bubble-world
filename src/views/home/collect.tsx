@@ -6,6 +6,7 @@ import { Card } from 'antd'
 import { AsideEnum } from './aside'
 
 const Collect = () => {
+  console.log('collect')
   return (
     <WorldPanel>
       <Card

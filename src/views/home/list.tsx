@@ -7,6 +7,7 @@ import React from 'react'
 const ListContent = () => {
   const [aricles, setAricles] = useState<Aricle[]>([])
   useEffect(() => {
+    console.log('list')
     const f = async () => {
       const result = await fetchArticles()
       setAricles(result)

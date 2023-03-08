@@ -8,6 +8,7 @@ import '@/mocks/index'
 
 const App = () => {
   const { light } = useThemeStore()
+  console.log('app')
 
   return (
     <ConfigProvider

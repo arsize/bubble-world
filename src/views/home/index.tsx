@@ -5,6 +5,7 @@ import type { TabsProps } from 'antd'
 import Block, { AsideEnum } from './aside'
 import Footer from '@/layout/Footer'
 import React from 'react'
+import { device } from '@/utils/device'
 
 const onChange = (key: string) => {
   console.log(key)
@@ -19,7 +20,7 @@ const items: TabsProps['items'] = [
 
 function Home() {
   return (
-    <Space size={'large'} align="start">
+    <HomeWrapper>
       <Card bodyStyle={{ padding: 0 }} size="small" loading={false}>
         <Tabs
           tabBarStyle={{
@@ -45,17 +46,19 @@ function Home() {
 
         <Footer />
       </Aside>
-    </Space>
+    </HomeWrapper>
   )
 }
 
-const AllWrapper = styled.div`
-  width: 100%;
+const HomeWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
 `
-const Lists = styled.div`
-  width: 694px;
-  box-shadow: 0 1px 3px hsl(0deg 0% 7% / 10%);
-  border-radius: 3px;
+
+const Aside = styled.div`
+  margin-left: 20px;
+  @media ${device.mobileL} {
+    display: none;
+  }
 `
-const Aside = styled.div``
 export default Home

@@ -1,11 +1,16 @@
 import CustomIcon from '@/components/common/CustomIcon'
 import { Icons } from '@/components/common/CustomIcon'
-import { Avatar, Badge, Switch, Dropdown, MenuProps, theme } from 'antd'
-import { BulbOutlined, SettingOutlined } from '@ant-design/icons'
+import { Avatar, Badge, Switch, MenuProps, theme, Dropdown } from 'antd'
+import {
+  BulbOutlined,
+  SettingOutlined,
+  UnorderedListOutlined,
+} from '@ant-design/icons'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import useThemeStore from '@/store'
+import { device } from '@/utils/device'
 
 const { useToken } = theme
 
@@ -24,6 +29,7 @@ const Header: React.FC = () => {
     },
   ]
   const changeTheme = () => {
+    console.log('1')
     change()
   }
   return (
@@ -34,7 +40,7 @@ const Header: React.FC = () => {
       }}
     >
       <div className="d-header">
-        <div className="warp">
+        <div className="wrap">
           <div className="contents clearfix">
             <div className="title" onClick={() => nav('/')}>
               <CustomIcon iconPath={Icons.SHUIDI} width={40} />
@@ -92,6 +98,20 @@ const Header: React.FC = () => {
             </div>
           </div>
         </div>
+        <div className="mobile-wrap">
+          <div className="mobile-left">
+            <Dropdown menu={{ items }} placement="bottomLeft" arrow>
+              <UnorderedListOutlined />
+            </Dropdown>
+            <div className="title">滴水世界</div>
+          </div>
+
+          <Dropdown menu={{ items }} placement="bottomLeft">
+            <Avatar style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}>
+              A
+            </Avatar>
+          </Dropdown>
+        </div>
       </div>
     </HeaderWrapper>
   )
@@ -109,7 +129,11 @@ const HeaderWrapper = styled.div`
     width: 100%;
     box-shadow: 0 2px 4px -1px rgb(0 0 0 / 25%);
     backface-visibility: hidden;
-    .warp {
+
+    .wrap {
+      @media ${device.mobileL} {
+        display: none;
+      }
       width: calc(100% - 20px);
       height: 100%;
       max-width: 1110px;
@@ -183,6 +207,24 @@ const HeaderWrapper = styled.div`
             margin-left: 20px;
             cursor: pointer;
           }
+        }
+      }
+    }
+    .mobile-wrap {
+      display: none;
+      width: 85%;
+      margin: 0 auto;
+      justify-content: space-between;
+      align-items: center;
+      @media ${device.mobileL} {
+        display: flex;
+      }
+
+      .mobile-left {
+        display: flex;
+        align-items: center;
+        .title {
+          margin-left: 15px;
         }
       }
     }

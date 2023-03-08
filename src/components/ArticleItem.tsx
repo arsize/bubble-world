@@ -18,6 +18,7 @@ const ArticleItem: React.FC<Aricle> = ({
 }) => {
   const nav = useNavigate()
   const { token } = useToken()
+  console.log('articel')
   return (
     <ListItemWrapper token={token}>
       <div className="avt-box">
@@ -46,7 +47,7 @@ const ArticleItem: React.FC<Aricle> = ({
         </div>
         <div className="time">{ctime}</div>
         <div className="from">
-          来自世界·
+          来自世界&nbsp;·&nbsp;
           <span className="hover-link" onClick={() => nav('/world')}>
             {world}
           </span>
