@@ -53,7 +53,7 @@ const ArticleItem: React.FC<Aricle> = ({
           className="from"
           style={{ fontSize: '13px', color: token.colorTextTertiary }}
         >
-          来自世界&nbsp;·&nbsp;
+          来自&nbsp;·&nbsp;
           <span className="hover-link" onClick={() => nav('/world')}>
             {world}
           </span>

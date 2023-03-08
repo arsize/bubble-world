@@ -1,3 +1,4 @@
+// 单个主题世界
 import React from 'react'
 import ArticleList from './articleList'
 import Footer from '@/layout/Footer'
@@ -17,7 +18,7 @@ const WorldPage = () => {
       <InfoPannelWrapper>
         <BookCover />
       </InfoPannelWrapper>
-      <InfoPannelWrapper>
+      <ArticleListWrapper>
         <div className="left-list">
           <ArticleList />
         </div>
@@ -49,7 +50,7 @@ const WorldPage = () => {
 
           <Footer />
         </div>
-      </InfoPannelWrapper>
+      </ArticleListWrapper>
     </React.Fragment>
   )
 }
