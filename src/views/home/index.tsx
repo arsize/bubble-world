@@ -1,6 +1,6 @@
 import ListContent from '@/views/home/list'
 import styled from 'styled-components'
-import { Card, Space, Tabs } from 'antd'
+import { Card, Tabs } from 'antd'
 import type { TabsProps } from 'antd'
 import Block, { AsideEnum } from './aside'
 import Footer from '@/layout/Footer'
