@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { TeamOutlined, RightOutlined } from '@ant-design/icons'
-import { AsideEnum } from './aside'
+import { AsideEnum } from '../../components/aside'
 import React from 'react'
 import WorldRoundIcon from '@/components/WorldRoundIcon'
 import { useNavigate } from 'react-router-dom'

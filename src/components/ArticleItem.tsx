@@ -13,56 +13,57 @@ const content = (
   </div>
 )
 
-const ArticleItem: React.FC<Aricle> = ({
-  author,
-  pre,
-  world,
-  title,
-  ctime,
-  like,
-  hot,
-}) => {
+interface ItemProps {
+  detail: Aricle
+  showFrom?: boolean
+}
+
+const ArticleItem: React.FC<ItemProps> = ({ detail, showFrom = true }) => {
   const nav = useNavigate()
   const { token } = useToken()
-  console.log('articel')
   return (
     <ListItemWrapper token={token}>
       <div className="avt-box">
         <span style={{ fontSize: '13px', color: token.colorTextTertiary }}>
-          {author.name}
+          {detail.author.name}
         </span>
         <span
           className="dividing"
           style={{ backgroundColor: token.colorSplit }}
         ></span>
         <span style={{ fontSize: '13px', color: token.colorTextTertiary }}>
-          {author.signature}
+          {detail.author.signature}
         </span>
       </div>
       <div className="top-box" onClick={() => nav('/article')}>
-        <div className="text-name">{title}</div>
+        <div className="text-name">{detail.title}</div>
       </div>
 
       <div className="content-pre-box" onClick={() => nav('/article')}>
-        {pre}
+        {detail.pre}
       </div>
       <div className="bottom-tools" style={{ color: token.colorTextTertiary }}>
         <div className="answer-num">
-          <FireOutlined /> <span style={{ marginLeft: '3px' }}>{hot}</span>
+          <FireOutlined />{' '}
+          <span style={{ marginLeft: '3px' }}>{detail.hot}</span>
         </div>
         <div className="view-num">
           <HeartOutlined />
-          <span style={{ marginLeft: '5px' }}>{like}</span>
+          <span style={{ marginLeft: '5px' }}>{detail.like}</span>
         </div>
-        <div className="time">{ctime}</div>
+        <div className="time">{detail.ctime}</div>
         <div
           className="from"
-          style={{ fontSize: '13px', color: token.colorTextTertiary }}
+          style={{
+            fontSize: '13px',
+            color: token.colorTextTertiary,
+            display: showFrom ? '' : 'none',
+          }}
         >
           来自&nbsp;·&nbsp;
           <Popover content={content} title="Title">
             <span className="hover-link" onClick={() => nav('/world')}>
-              {world}
+              {detail.world}
             </span>
           </Popover>
         </div>

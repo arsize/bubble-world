@@ -3,7 +3,7 @@ import { Button, Card, Tooltip } from 'antd'
 import styled from 'styled-components'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { AsideEnum } from './aside'
+import { AsideEnum } from '../../components/aside'
 
 const Create: React.FC = () => {
   const nav = useNavigate()

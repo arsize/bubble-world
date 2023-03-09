@@ -2,7 +2,7 @@ import { TrophyOutlined } from '@ant-design/icons'
 import styled from 'styled-components'
 import React from 'react'
 import { Card } from 'antd'
-import { AsideEnum } from './aside'
+import { AsideEnum } from '../../components/aside'
 
 const Leaderboard = () => {
   return (

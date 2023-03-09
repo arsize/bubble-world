@@ -1,11 +1,15 @@
 import styled from 'styled-components'
 
-import WorldPanel from './worldPanel'
-import Create from './create'
-import Leaderboard from './leaderBoard'
-import Collect from './collect'
-import Recommend from './recommend'
+import WorldPanel from '../views/home/worldPanel'
+import Create from '../views/home/create'
+import Leaderboard from '../views/home/leaderBoard'
+import Collect from '../views/home/collect'
+import Recommend from '../views/home/recommend'
 import React from 'react'
+import WriteRule from '../views/world/writeRule'
+import ActivityUser from '../views/world/activityUser'
+import BookCollect from '../views/world/bookCollect'
+import Chat from '../views/world/chat'
 
 export enum AsideEnum {
   WORLD = '热门世界',
@@ -13,6 +17,10 @@ export enum AsideEnum {
   LEADERBOARD = '字数排行榜',
   COLLECT = '已订阅',
   RECOMMEND = '推荐关注',
+  WRITERULE = '创作规则',
+  ACTIVITYUSER = '活跃用户',
+  BOOKCOLLECT = '入库作品',
+  CHAT = '讨论区',
 }
 
 interface Props {
@@ -36,6 +44,18 @@ const Block: React.FC<Props> = (props) => {
       break
     case AsideEnum.LEADERBOARD:
       asideBlock = <Leaderboard />
+      break
+    case AsideEnum.WRITERULE:
+      asideBlock = <WriteRule />
+      break
+    case AsideEnum.ACTIVITYUSER:
+      asideBlock = <ActivityUser />
+      break
+    case AsideEnum.BOOKCOLLECT:
+      asideBlock = <BookCollect />
+      break
+    case AsideEnum.CHAT:
+      asideBlock = <Chat />
       break
 
     default:

@@ -3,7 +3,7 @@ import { WorldPanel } from './worldPanel'
 import React from 'react'
 import WorldRoundIcon from '@/components/WorldRoundIcon'
 import { Card } from 'antd'
-import { AsideEnum } from './aside'
+import { AsideEnum } from '../../components/aside'
 
 const Collect = () => {
   console.log('collect')

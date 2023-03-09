@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import useThemeStore from '@/store'
 import { device } from '@/utils/device'
+import { Global } from '@/utils/config'
 
 const { useToken } = theme
 
@@ -45,7 +46,7 @@ const Header: React.FC = () => {
             <div className="title" onClick={() => nav('/')}>
               <CustomIcon iconPath={Icons.SHUIDI} width={40} />
               <div style={{ marginLeft: '10px' }}>
-                滴水世界&nbsp;
+                {Global.websiteName}&nbsp;
                 <span
                   style={{ fontSize: '10px', color: token.colorTextQuaternary }}
                 >
@@ -103,7 +104,7 @@ const Header: React.FC = () => {
             <Dropdown menu={{ items }} placement="bottomLeft" arrow>
               <UnorderedListOutlined />
             </Dropdown>
-            <div className="title">滴水世界</div>
+            <div className="title">{Global.websiteName}</div>
           </div>
           <div className="mobile-right">
             <div className="mobile-switch">

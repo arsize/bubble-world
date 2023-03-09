@@ -21,7 +21,7 @@ const ListContent = () => {
         <div className="list-area">
           <div className="contents ember-view">
             {aricles.map((k, i) => {
-              return <ArticleItem {...k} key={i} />
+              return <ArticleItem detail={k} key={i} />
             })}
           </div>
         </div>

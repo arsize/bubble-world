@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ArticleItem from '@/components/ArticleItem'
+import { Card } from 'antd'
 
 const ArticleList = () => {
   const item = {
@@ -19,31 +20,20 @@ const ArticleList = () => {
   }
   return (
     <ListWarpper>
-      <div className="search-rules">
-        <div className="num">100篇作品</div>
-        <div className="tools">最新 / 最热</div>
-      </div>
-      <div className="list">
-        <ArticleItem {...item} />
-      </div>
+      <Card
+        size="small"
+        bodyStyle={{ padding: 0 }}
+        style={{ maxWidth: '700px' }}
+      >
+        <div className="list">
+          <ArticleItem detail={item} showFrom={false} />
+          <ArticleItem detail={item} showFrom={false} />
+        </div>
+      </Card>
     </ListWarpper>
   )
 }
 
-const ListWarpper = styled.div`
-  .search-rules {
-    display: flex;
-    font-size: 14px;
-    justify-content: space-between;
-    padding: 10px;
-    padding-bottom: 0;
-    box-sizing: border-box;
-    color: #8590a6;
-    .num,
-    .tools {
-      cursor: pointer;
-    }
-  }
-`
+const ListWarpper = styled.div``
 
 export default ArticleList

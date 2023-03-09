@@ -5,7 +5,7 @@ import { Card, Carousel, theme } from 'antd'
 import AvatarItem from '@/components/AvatarItem'
 import { PlusOutlined } from '@ant-design/icons'
 import { AliasToken } from 'antd/es/theme/internal'
-import { AsideEnum } from './aside'
+import { AsideEnum } from '../../components/aside'
 
 const { useToken } = theme
 

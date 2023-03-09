@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
+import { Global } from '@/utils/config'
 
 function Footer() {
   return (
@@ -8,7 +9,7 @@ function Footer() {
       <br />
       <p>举报邮箱：jubao@gmail.com</p>
       <br />
-      <p>联系我们 © 2023 滴水世界</p>
+      <p>联系我们 © 2023 {Global.websiteName}</p>
       <br />
       <p>世界是天空中落下的一滴水</p>
       <br />

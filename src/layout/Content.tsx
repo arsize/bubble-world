@@ -16,6 +16,7 @@ const MainWrapper = styled.div`
   margin-right: auto;
   margin-left: auto;
   width: 1000px;
+  min-height: 1000px;
   @media ${device.tablet} {
     width: ${size.tablet};
   }

@@ -11,57 +11,36 @@ import {
   BookOutlined,
 } from '@ant-design/icons'
 import styled from 'styled-components'
+import { device } from '@/utils/device'
+import Block, { AsideEnum } from '@/components/aside'
 
 const WorldPage = () => {
   return (
     <React.Fragment>
-      <InfoPannelWrapper>
-        <BookCover />
-      </InfoPannelWrapper>
+      <BookCover />
       <ArticleListWrapper>
-        <div className="left-list">
-          <ArticleList />
-        </div>
-        <div className="right-aside">
-          <div className="block">
-            <div className="title">
-              <PushpinOutlined />
-              <div className="rules">创作规则</div>
-            </div>
-          </div>
-          <div className="block">
-            <div className="title">
-              <TeamOutlined />
-              <div className="rules">活跃作者</div>
-            </div>
-          </div>
-          <div className="block">
-            <div className="title">
-              <BookOutlined />
-              <div className="rules">入库作品</div>
-            </div>
-          </div>
-          <div className="block">
-            <div className="title">
-              <MessageOutlined />
-              <div className="rules">讨论区</div>
-            </div>
-          </div>
+        <ArticleList />
+        <Aside>
+          <Block type={AsideEnum.WRITERULE} />
+          <Block type={AsideEnum.ACTIVITYUSER} />
+
+          <Block type={AsideEnum.BOOKCOLLECT} />
+          <Block type={AsideEnum.CHAT} />
 
           <Footer />
-        </div>
+        </Aside>
       </ArticleListWrapper>
     </React.Fragment>
   )
 }
 
-const InfoPannelWrapper = styled.div`
-  width: 100%;
-  height: 200px;
-  background-color: white;
-  box-shadow: 0 1px 3px hsl(0deg 0% 7% / 10%);
-  border-radius: 5px;
+const Aside = styled.div`
+  margin-left: 20px;
+  @media ${device.mobileL} {
+    display: none;
+  }
 `
+
 const ArticleListWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -70,13 +49,15 @@ const ArticleListWrapper = styled.div`
   padding: 10px 0;
   .left-list {
     width: 70%;
-    padding: 10px;
-    padding-bottom: 0;
-    background-color: white;
-    box-shadow: 0 1px 3px hsl(0deg 0% 7% / 10%);
+    @media ${device.mobileL} {
+      width: 100%;
+    }
   }
   .right-aside {
     width: 28%;
+    @media ${device.mobileL} {
+      display: none;
+    }
 
     .block {
       padding: 10px;
