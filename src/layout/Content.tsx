@@ -17,11 +17,14 @@ const MainWrapper = styled.div`
   margin-left: auto;
   width: 1000px;
   min-height: 1000px;
+  @media (max-width: 820px) {
+    width: 820px;
+  }
   @media ${device.tablet} {
     width: ${size.tablet};
   }
   @media ${device.mobileL} {
-    width: ${size.mobileL};
+    width: 390px;
   }
   @media ${device.mobileM} {
     width: ${size.mobileM};

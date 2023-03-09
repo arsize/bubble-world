@@ -44,7 +44,7 @@ const BookCover = () => {
                 <span>已订阅：</span>
                 <CountUp end={100} duration={0.3} separator="," />人
               </div>
-              <div className="activity" style={{ minWidth: '100px' }}>
+              <div className="activity" style={{ minWidth: '105px' }}>
                 <span>活跃度：</span>
                 <ActivityBar num={210} />
               </div>

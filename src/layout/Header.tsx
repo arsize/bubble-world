@@ -241,7 +241,7 @@ const HeaderWrapper = styled.div`
     }
     .mobile-wrap {
       display: none;
-      width: 85%;
+      width: 90%;
       margin: 0 auto;
       justify-content: space-between;
       align-items: center;

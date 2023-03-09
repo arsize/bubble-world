@@ -41,6 +41,7 @@
     "@typescript-eslint/parser": "^5.54.0",
     "@vavt/md-editor-extension": "^2.0.0",
     "@vitejs/plugin-react": "^3.0.0",
+    "babel-plugin-styled-components-px2vw": "^1.6.0",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
