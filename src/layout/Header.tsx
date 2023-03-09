@@ -7,7 +7,7 @@ import {
   UnorderedListOutlined,
 } from '@ant-design/icons'
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import useThemeStore from '@/store'
 import { device } from '@/utils/device'
@@ -17,6 +17,8 @@ const { useToken } = theme
 
 const Header: React.FC = () => {
   const nav = useNavigate()
+  const location = useLocation()
+  console.log(location.pathname)
   const { token } = useToken()
   const { light, change } = useThemeStore()
   const items: MenuProps['items'] = [
@@ -59,14 +61,26 @@ const Header: React.FC = () => {
                 <ul className="custom-header-links">
                   <li
                     onClick={() => nav('/')}
-                    className="headerLink vdm actived"
+                    className={`headerLink vdm ${
+                      location.pathname == '/' ? 'actived' : ''
+                    }`}
                   >
                     <span>首页</span>
                   </li>
-                  <li onClick={() => nav('/all')} className="headerLink vdm">
+                  <li
+                    onClick={() => nav('/all')}
+                    className={`headerLink vdm ${
+                      location.pathname == '/all' ? 'actived' : ''
+                    }`}
+                  >
                     <span>世界</span>
                   </li>
-                  <li onClick={() => nav('/stack')} className="headerLink vdm">
+                  <li
+                    onClick={() => nav('/stack')}
+                    className={`headerLink vdm ${
+                      location.pathname == '/stack' ? 'actived' : ''
+                    }`}
+                  >
                     <span>库藏</span>
                   </li>
                   <li className="headerLink vdm">
@@ -200,9 +214,6 @@ const HeaderWrapper = styled.div`
                   }
                 }
 
-                .switch {
-                  background-color: black;
-                }
                 .bottom-line {
                   width: 0;
                   position: absolute;
