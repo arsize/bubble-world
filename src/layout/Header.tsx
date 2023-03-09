@@ -1,6 +1,14 @@
 import CustomIcon from '@/components/common/CustomIcon'
 import { Icons } from '@/components/common/CustomIcon'
-import { Avatar, Badge, Switch, MenuProps, theme, Dropdown } from 'antd'
+import {
+  Avatar,
+  Badge,
+  Switch,
+  MenuProps,
+  theme,
+  Dropdown,
+  Tooltip,
+} from 'antd'
 import {
   BulbOutlined,
   SettingOutlined,
@@ -75,14 +83,16 @@ const Header: React.FC = () => {
                   >
                     <span>世界</span>
                   </li>
-                  <li
-                    onClick={() => nav('/stack')}
-                    className={`headerLink vdm ${
-                      location.pathname == '/stack' ? 'actived' : ''
-                    }`}
-                  >
-                    <span>库藏</span>
-                  </li>
+                  <Tooltip placement="bottom" title={'敬请期待'}>
+                    <li
+                      className={`headerLink vdm ${
+                        location.pathname == '/stack' ? 'actived' : ''
+                      }`}
+                    >
+                      <span>库藏</span>
+                    </li>
+                  </Tooltip>
+
                   <li className="headerLink vdm">
                     <Badge dot={true}>
                       <BulbOutlined size={30} />

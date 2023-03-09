@@ -1,19 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
-import AvatarItem from '@/components/AvatarItem'
-import { Button } from 'antd'
+import { Avatar, Button, Card, theme } from 'antd'
+import ArtPanel from './artPanel'
+
+const { useToken } = theme
 
 const Article = () => {
+  const { token } = useToken()
   return (
     <ArticleWrapper>
-      <div className="article-container">文字</div>
+      <div className="article-container">
+        <ArtPanel />
+      </div>
       <div className="right-aside">
-        <AvatarItem shape="square" iconSize={40}>
-          <span style={{ marginLeft: '10px' }}>彩虹酱</span>
-        </AvatarItem>
-        <Button className="btn" type="primary">
-          关注
-        </Button>
+        <Card size="small" bodyStyle={{ padding: '20px' }}>
+          <div className="user-info">
+            <Avatar shape="square" size={50}></Avatar>
+            <div className="user-right">
+              <div style={{ color: token.colorText }}>谢锐彬</div>
+              <div style={{ color: token.colorTextSecondary }}>
+                人走茶不凉，杯一直在续上
+              </div>
+            </div>
+          </div>
+
+          <Button className="btn" type="primary">
+            关注
+          </Button>
+        </Card>
       </div>
     </ArticleWrapper>
   )
@@ -24,21 +38,24 @@ const ArticleWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   .article-container {
-    width: 73%;
-    padding: 10px;
-    background-color: white;
-    box-shadow: 0 0 3px 1px rgba(var(--tertiary-rgb), 0.35);
+    width: 68%;
   }
   .right-aside {
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-    box-sizing: border-box;
-    background-color: white;
-    box-shadow: 0 0 3px 1px rgba(var(--tertiary-rgb), 0.35);
+    width: 30%;
+    .user-info {
+      display: flex;
+
+      .user-right {
+        padding: 2px 0;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
     .btn {
-      margin-top: 10px;
+      width: 100%;
+      margin-top: 15px;
     }
   }
 `
