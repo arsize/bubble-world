@@ -1,7 +1,7 @@
 import React from 'react'
 
 function NoFind() {
-  return <div>404</div>
+  return <div></div>
 }
 
 export default NoFind

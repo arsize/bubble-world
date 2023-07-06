@@ -1,8 +1,3 @@
-declare interface LoginInfo {
-  username: string
-  password: string
-}
-
 declare interface Aricle {
   id: number
   title: string
@@ -22,4 +17,11 @@ declare interface Author {
 
 declare interface ThemeWorld {
   worldName: string
+}
+
+declare interface UserDetailInfo {
+  token: string
+  name: string
+  pic: string
+  id: number
 }

@@ -17,19 +17,20 @@ import {
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import useThemeStore from '@/store'
+import useThemeStore from '@/store/themeInfo'
 import { device } from '@/utils/device'
 import { Global } from '@/utils/config'
+import useUsersStore from '@/store/userInfo'
 
 const { useToken } = theme
 
 const Header: React.FC = () => {
   const nav = useNavigate()
   const location = useLocation()
-  console.log(location.pathname)
   const { token } = useToken()
+  const userInfo = useUsersStore()
   const { light, change } = useThemeStore()
-  const items: MenuProps['items'] = [
+  const menuItems: MenuProps['items'] = [
     {
       key: 1,
       label: <div onClick={() => nav('/user')}>我的主页</div>,
@@ -40,7 +41,6 @@ const Header: React.FC = () => {
     },
   ]
   const changeTheme = () => {
-    console.log('1')
     change()
   }
   return (
@@ -112,20 +112,27 @@ const Header: React.FC = () => {
                 </ul>
               </div>
               <div className="user-avatar">
-                <Dropdown menu={{ items }} placement="bottom">
-                  <Avatar
-                    style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}
-                  >
-                    A
-                  </Avatar>
-                </Dropdown>
+                {userInfo.token ? (
+                  <Dropdown menu={{ items: menuItems }} placement="bottom">
+                    <Avatar
+                      style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}
+                    >
+                      A
+                    </Avatar>
+                  </Dropdown>
+                ) : (
+                  <div onClick={() => nav('/login')} className="login-btn">
+                    登录
+                  </div>
+                )}
               </div>
             </div>
           </div>
         </div>
+        {/* 移动端 */}
         <div className="mobile-wrap">
           <div className="mobile-left">
-            <Dropdown menu={{ items }} placement="bottomLeft" arrow>
+            <Dropdown menu={{ items: menuItems }} placement="bottomLeft" arrow>
               <UnorderedListOutlined />
             </Dropdown>
             <div className="title">{Global.websiteName}</div>
@@ -140,7 +147,7 @@ const Header: React.FC = () => {
               />
             </div>
 
-            <Dropdown menu={{ items }} placement="bottomLeft">
+            <Dropdown menu={{ items: menuItems }} placement="bottomLeft">
               <Avatar style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}>
                 A
               </Avatar>
@@ -245,6 +252,9 @@ const HeaderWrapper = styled.div`
           .user-avatar {
             margin-left: 20px;
             cursor: pointer;
+            .login-btn {
+              font-size: 14px;
+            }
           }
         }
       }

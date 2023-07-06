@@ -1,18 +1,15 @@
-import axios, {
-  AxiosError,
-  AxiosInstance,
-  AxiosRequestConfig,
-  AxiosResponse,
-} from 'axios'
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
 
-const instance: AxiosInstance = axios.create({
+const instance = axios.create({
   baseURL: '/',
   timeout: 1000,
-  headers: { 'X-Custom-Header': 'arsize' },
 })
 
 instance.interceptors.request.use(
-  (config: any) => {
+  (config: AxiosRequestConfig) => {
+    if (config.headers && !config.headers['Authorization']) {
+      config.headers['Authorization'] = 'Bearer ' + '123'
+    }
     return config
   },
   (err: AxiosError) => {
@@ -46,6 +43,9 @@ instance.interceptors.response.use(
 export const http = {
   get<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
     return instance.get(url, config)
+  },
+  post<T, U>(url: string, data: U): Promise<T> {
+    return instance.post(url, data)
   },
 }
 

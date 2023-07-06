@@ -1,7 +1,8 @@
 import React from 'react'
 
 const User = () => {
-  return <div>u</div>
+  return <div>
+  </div>
 }
 
 export default User
