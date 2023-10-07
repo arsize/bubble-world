@@ -21,7 +21,11 @@ const items: TabsProps['items'] = [
 function Home() {
   return (
     <HomeWrapper>
-      <Card bodyStyle={{ padding: 0 }} size="small" loading={false}>
+      <Card
+        bodyStyle={{ padding: 0, minWidth: 698 }}
+        size="small"
+        loading={false}
+      >
         <Tabs
           tabBarStyle={{
             padding: '0 20px',

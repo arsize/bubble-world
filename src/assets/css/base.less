@@ -1,0 +1,22 @@
+@import './var.less';
+
+html {
+  margin: 0;
+  padding: 0;
+  background: #f6f6f6;
+}
+body {
+  margin: 0;
+  padding: 0;
+  scrollbar-width: none; /* firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  overflow-x: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+html.dark {
+  background: var(--bg);
+}

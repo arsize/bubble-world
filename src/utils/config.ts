@@ -1,4 +1,4 @@
 export const Global = {
-  websiteName: '滴水书屋',
+  websiteName: '气泡世界',
   defaultCover: 'http://arsizes.com/drip/world_bg.jpg',
 }

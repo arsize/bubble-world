@@ -29,7 +29,7 @@ const Collect = () => {
             <WorldRoundIcon width="20%" iconSize={28} name={'九州'} />
           </div>
         ) : (
-          <NFlex>
+          <NFlex alian="center">
             <Button onClick={() => nav('/login')} type="primary">
               请登录
             </Button>

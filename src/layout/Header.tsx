@@ -54,7 +54,7 @@ const Header: React.FC = () => {
         <div className="wrap">
           <div className="contents clearfix">
             <div className="title" onClick={() => nav('/')}>
-              <CustomIcon iconPath={Icons.SHUIDI} width={40} />
+              <CustomIcon iconPath={Icons.QIPAO} width={40} />
               <div style={{ marginLeft: '10px' }}>
                 {Global.websiteName}&nbsp;
                 <span

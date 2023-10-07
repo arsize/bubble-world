@@ -11,9 +11,9 @@ function Footer() {
       <br />
       <p>联系我们 © 2023 {Global.websiteName}</p>
       <br />
-      <p>世界是天空中落下的一滴水</p>
+      <p>一起吹个泡泡吧</p>
       <br />
-      <p>希望它终能变成海洋</p>
+      <p>吹起阳光下五彩斑斓的梦</p>
     </Foot>
   )
 }

@@ -1,3 +1,5 @@
+import React from 'react'
+
 interface Props {
   iconPath: Icons
   width: number
@@ -6,7 +8,7 @@ interface Props {
 }
 
 export enum Icons {
-  SHUIDI = 'icon-shuidi',
+  QIPAO = 'icon-qipao',
   SEARCH = 'icon-chaxun',
   WRIGHT = 'icon-yongyan',
 }
